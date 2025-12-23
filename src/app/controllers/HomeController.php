@@ -2,10 +2,14 @@
 
 namespace app\controllers;
 
+use core\library\Layout;
+
 class HomeController
 {
   public function index()
   {
-    dd('home');
+    view("home", [
+      'title' => 'Home Page'
+    ]);
   }
 }

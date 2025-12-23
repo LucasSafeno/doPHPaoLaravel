@@ -1,5 +1,8 @@
 <?php
-function view(string $view, array $data = [])
+
+use core\library\Layout;
+
+function view(string $view, array $data = [], $viewPath = VIEW_PATH)
 {
-  dd('view' . $view);
+  return Layout::render($view, $data, $viewPath);
 }
