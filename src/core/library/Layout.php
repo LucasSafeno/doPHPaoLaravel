@@ -3,6 +3,7 @@
 namespace core\library;
 
 use League\Plates\Engine;
+use core\templates\Plates;
 use core\exceptions\ViewNotFoundExeption;
 
 class Layout
@@ -19,10 +20,6 @@ class Layout
       throw new ViewNotFoundExeption(" View not found : $view");
     }
 
-    // Create new Plates instance
-    $templates = new Engine($viewPath);
-
-    // Render a template
-    echo $templates->render($view, $data,);
+    return (new Plates)->render($view, $data, $viewPath);
   }
 }
