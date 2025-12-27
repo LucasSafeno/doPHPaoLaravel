@@ -7,6 +7,7 @@ use core\templates\Plates;
 use core\library\Container;
 use core\exceptions\ClassNotFoundExption;
 use core\exceptions\ViewNotFoundExeption;
+use core\interfaces\templateInterface;
 
 class Layout
 {
@@ -26,6 +27,10 @@ class Layout
     }
 
     $template = new $template();
+
+    if (!$template instanceof templateInterface) {
+      throw new ClassNotFoundExption("Template {" . $template::class . " must implement tempalteInterface");
+    }
 
     return $template->render($view, $data, $viewPath);
 

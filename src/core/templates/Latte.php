@@ -2,7 +2,12 @@
 
 namespace core\templates;
 
-class Latte
+use core\interfaces\templateInterface;
+
+class Latte implements templateInterface
 {
+  public function render(){
     
+  }
+
 }

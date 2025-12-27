@@ -3,8 +3,9 @@
 namespace core\templates;
 
 use League\Plates\Engine;
+use core\interfaces\templateInterface;
 
-class Plates
+class Plates implements templateInterface
 {
     public function render($view,  $data = [], $viewPath = VIEW_PATH){
 
