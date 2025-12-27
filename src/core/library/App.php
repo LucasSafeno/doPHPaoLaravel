@@ -6,6 +6,7 @@ use DI\Container;
 use Dotenv\Dotenv;
 use DI\ContainerBuilder;
 use Spatie\Ignition\Ignition;
+use core\library\Container as LibraryContainer;
 
 class App
 {
@@ -41,4 +42,10 @@ class App
 
     return $this;
   } // withEnvironmentVariables
+
+  public function withTemplateEngine(string $engine)
+  {
+    bind('engine', $engine);
+    return $this;
+  } // withTemplateEngine
 }
